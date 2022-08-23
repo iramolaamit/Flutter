@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 class CatalogModel {
   static List<Item> ?items;
   // static List<Item> items= [
@@ -23,8 +23,7 @@ class CatalogModel {
   //   // ];
 }
 
-=======
->>>>>>> day6
+
 class Item {
   final int id;
   final String name;
@@ -33,7 +32,7 @@ class Item {
   final String color;
   final String image;
 
-<<<<<<< HEAD
+
   Item(
       {required this.id,
       required this.name,
@@ -64,14 +63,14 @@ class Item {
         "color": color,
         "image": image,
       };
-=======
-  Item(this.id, this.name, this.desc, this.price, this.color, this.image);
+
+  // Item(this.id, this.name, this.desc, this.price, this.color, this.image);
 }
 
-class CatalogModel {
-  final items = [
-    Item(1, 'iPhone 12 Pro', 'Apple iPhone 12th Gen', 9999, "#333505a",
-        "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg")
-  ];
->>>>>>> day6
-}
+// class CatalogModel {
+//   final items = [
+//     Item(1, 'iPhone 12 Pro', 'Apple iPhone 12th Gen', 9999, "#333505a",
+//         "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg")
+//   ];
+//
+// }
