@@ -15,7 +15,9 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyTheme.creamColor,
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       bottomNavigationBar: Container(
         color: Colors.white,
         child: ButtonBar(
@@ -25,12 +27,12 @@ class HomeDetailPage extends StatelessWidget {
             '\$${catalog.price}'.text.bold.xl4.green600.make(),
             ElevatedButton(
               onPressed: () {},
-              child: "Buy".text.make(),
+              child: "Add to cart".text.make(),
               style: ButtonStyle(
                 shape: MaterialStateProperty.all(StadiumBorder()),
                 // backgroundColor: MaterialStateProperty.all(MyTheme.darkBlueColor)
               ),
-            ).wh(100, 50),
+            ).wh(120, 50),
           ],
         ).pOnly(right: 32, left: 32),
       ),
@@ -59,6 +61,11 @@ class HomeDetailPage extends StatelessWidget {
                           .textStyle(context.captionStyle)
                           .xl
                           .make(),
+                      "Drawer widget is used to provide access to different destinations and functionalities provided in your application."
+                          .text
+                          .textStyle(context.captionStyle)
+                          .make()
+                          .p16(),
                     ],
                   ).py64(),
                 ),

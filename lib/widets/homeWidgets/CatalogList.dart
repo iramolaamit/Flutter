@@ -66,14 +66,22 @@ class CatalogItem extends StatelessWidget {
                     '\$${catalog.price}'.text.bold.xl.make(),
                     ElevatedButton(
                       onPressed: () {},
-                      child: "Buy".text.make(),
+                      child: "Add to cart".text.make(),
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(StadiumBorder()),
                         // backgroundColor: MaterialStateProperty.all(MyTheme.darkBlueColor)
                       ),
                     ),
+                    // ElevatedButton(
+                    //   onPressed: () {},
+                    //   child: "Buy".text.make(),
+                    //   style: ButtonStyle(
+                    //     shape: MaterialStateProperty.all(StadiumBorder()),
+                    //     // backgroundColor: MaterialStateProperty.all(MyTheme.darkBlueColor)
+                    //   ),
+                    // ),
                   ],
-                ).pOnly(right: 8),
+                ).pOnly(right: 4),
               ],
             ),
           )
