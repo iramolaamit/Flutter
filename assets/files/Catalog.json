@@ -6,7 +6,7 @@
         "desc": "Apple iPhone 12th Gen",
         "price":9999,
         "color": "#333505a",
-        "image": "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+              "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-12-pro--.jpg"
       },
       {
         "id": 2,
@@ -14,39 +14,47 @@
         "desc": "Apple iPhone 12th Gen",
         "price":9999,
         "color": "#333505a",
-        "image": "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/refurb-iphone-11-pro-silver-2019?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1611101533000"
       },
       {
         "id": 3,
-        "name": "Pixel",
+        "name": "Pixel 4",
         "desc": "Apple iPhone 12th Gen",
         "price":9999,
         "color": "#333505a",
-        "image": "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-4-r1.jpg"
       },
       {
         "id": 4,
-        "name": "Vivo Y11",
+        "name": "Dell D15 Laptop",
         "desc": "Apple iPhone 12th Gen",
         "price":9999,
         "color": "#333505a",
-        "image": "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+        "image": "https://i.gadgets360cdn.com/products/large/Huawei-matebook-D-15-800x800-1596113402.jpg"
       },
       {
         "id": 5,
-        "name": "Realme",
+        "name": "Realme EarBud",
         "desc": "Apple iPhone 12th Gen",
         "price":9999,
         "color": "#333505a",
-        "image": "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+        "image": "https://images.fonearena.com/blog/wp-content/uploads/2019/12/realme-Buds-Air_fonearena-10-1024x649.jpg"
       },
       {
         "id": 6,
-        "name": "Micromax",
+        "name": "Microwave oven",
         "desc": "Apple iPhone 12th Gen",
         "price":9999,
         "color": "#333505a",
-        "image": "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+        "image": "https://m.media-amazon.com/images/I/614cZL1O0SL._SX425_.jpg"
+      },
+      {
+        "id": 8,
+        "name": "Charger",
+        "desc": "Apple iPhone 12th Gen",
+        "price":9999,
+        "color": "#333505a",
+        "image": "https://cdn.shopify.com/s/files/1/0332/3917/1117/products/4_dd59a440-4de0-4fb6-b26b-e48f7664c947.jpg?v=1622458846"
       }
     ]
   }
