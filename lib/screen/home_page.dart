@@ -41,11 +41,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.canvasColor,
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-        child: Icon(CupertinoIcons.cart),
+        child: Icon(CupertinoIcons.cart, color: Colors.white),
+        backgroundColor: context.theme.buttonColor,
       ),
-      backgroundColor: Theme.of(context).cardColor,
       body: SafeArea(
         child: Container(
           padding: Vx.m32,
@@ -56,7 +57,9 @@ class _HomePageState extends State<HomePage> {
               if (CatalogModel.items != null && CatalogModel.items!.isNotEmpty)
                 CatalogList().py16().expand()
               else
-                CircularProgressIndicator().centered().py64().expand(),
+                CircularProgressIndicator(
+                  color: context.accentColor,
+                ).centered().py64().expand(),
             ],
           ),
         ),

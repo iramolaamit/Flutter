@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/widets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CatalogImage extends StatelessWidget {
@@ -13,7 +12,7 @@ class CatalogImage extends StatelessWidget {
         .box
         .roundedLg
         .p8
-        .color(MyTheme.creamColor)
+        .color(context.canvasColor)
         .make()
         .p8()
         .w24(
