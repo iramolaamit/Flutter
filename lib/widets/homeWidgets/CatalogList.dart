@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/screen/home_detail_page.dart';
 import 'package:untitled/widets/homeWidgets/CatalogImage.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../../models/catalog.dart';
+import '../../pages/home_detail_page.dart';
 
 class CatalogList extends StatelessWidget {
   const CatalogList({Key? key}) : super(key: key);

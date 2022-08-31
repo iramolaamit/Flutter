@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/screen/cart_page.dart';
-import 'package:untitled/screen/loginPage.dart';
+import 'package:untitled/pages/loginPage.dart';
 import 'package:untitled/utils/routes.dart';
 import 'package:untitled/widets/themes.dart';
 
+import 'cart_page.dart';
 import 'home_page.dart';
 
 void main() {
