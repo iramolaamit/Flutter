@@ -1,6 +1,6 @@
-
 class CatalogModel {
-  static List<Item> ?items;
+  static List<Item>? items;
+
   // static List<Item> items= [
   //   //   Item(
   //   //     id: 1,
@@ -21,8 +21,13 @@ class CatalogModel {
   //   //         "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg",
   //   //   )
   //   // ];
-}
 
+// get item by id
+  static Item getById(int id) =>
+      items!.firstWhere((element) => element.id == id, orElse: null);
+
+  static Item getByPosition(int pos) => items![pos];
+}
 
 class Item {
   final int id;
@@ -31,7 +36,6 @@ class Item {
   final num price;
   final String color;
   final String image;
-
 
   Item(
       {required this.id,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class MyTheme {
   static ThemeData lightThemeData(BuildContext context) => ThemeData(
@@ -17,7 +18,9 @@ class MyTheme {
           iconTheme: IconThemeData(
             color: Colors.black,
           ),
-          textTheme: Theme.of(context).textTheme,
+          textTheme: Theme.of(context).textTheme.copyWith(
+              headline6:
+                  context.textTheme.headline6?.copyWith(color: Colors.black)),
         ),
       );
 
@@ -34,10 +37,10 @@ class MyTheme {
           color: Colors.black,
           elevation: 0.0,
           centerTitle: true,
-          iconTheme: IconThemeData(
-            color: Colors.white,
-          ),
-          textTheme: Theme.of(context).textTheme,
+          iconTheme: IconThemeData(color: Colors.white),
+          textTheme: Theme.of(context).textTheme.copyWith(
+              headline6:
+                  context.textTheme.headline6?.copyWith(color: Colors.white)),
         ),
       );
   static Color creamColor = Color(0xfff5f5f5);
