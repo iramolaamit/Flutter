@@ -1,26 +1,10 @@
 class CatalogModel {
-  static List<Item>? items;
+  static final catModel = CatalogModel._internal();
 
-  // static List<Item> items= [
-  //   //   Item(
-  //   //     id: 1,
-  //   //     name: 'iPhone 12 Pro',
-  //   //     desc: 'Apple iPhone 12th Gen',
-  //   //     price: 9999,
-  //   //     color: "#333505a",
-  //   //     image:
-  //   //         "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg",
-  //   //   ),
-  //   //   Item(
-  //   //     id: 3,
-  //   //     name: "Pixel",
-  //   //     desc: "Apple iPhone 12th Gen",
-  //   //     price: 9999,
-  //   //     color: "#333505a",
-  //   //     image:
-  //   //         "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg",
-  //   //   )
-  //   // ];
+  CatalogModel._internal();
+
+  factory CatalogModel() => catModel;
+  static List<Item>? items;
 
 // get item by id
   Item getById(int id) =>
@@ -71,10 +55,3 @@ class Item {
   // Item(this.id, this.name, this.desc, this.price, this.color, this.image);
 }
 
-// class CatalogModel {
-//   final items = [
-//     Item(1, 'iPhone 12 Pro', 'Apple iPhone 12th Gen', 9999, "#333505a",
-//         "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg")
-//   ];
-//
-// }

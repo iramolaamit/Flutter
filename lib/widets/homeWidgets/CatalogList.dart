@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/models/cart.dart';
 import 'package:untitled/widets/homeWidgets/CatalogImage.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -64,14 +65,7 @@ class CatalogItem extends StatelessWidget {
                   buttonPadding: EdgeInsets.zero,
                   children: [
                     '\$${catalog.price}'.text.bold.xl.make(),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: "Add to cart".text.make(),
-                      style: ButtonStyle(
-                          shape: MaterialStateProperty.all(StadiumBorder()),
-                          backgroundColor: MaterialStateProperty.all(
-                              context.theme.buttonColor)),
-                    ),
+                    _AddToCart(catalog: catalog),
                     // ElevatedButton(
                     //   onPressed: () {},
                     //   child: "Buy".text.make(),
@@ -88,5 +82,39 @@ class CatalogItem extends StatelessWidget {
         ],
       ),
     ).color(context.cardColor).rounded.square(150).make().py16();
+  }
+}
+
+class _AddToCart extends StatefulWidget {
+  final Item catalog;
+
+  const _AddToCart({Key? key, required this.catalog}) : super(key: key);
+
+  @override
+  State<_AddToCart> createState() => _AddToCartState();
+}
+
+class _AddToCartState extends State<_AddToCart> {
+  bool isAdded = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        isAdded = isAdded.toggle();
+        final _catalog = CatalogModel();
+        final _cart = CartModel();
+
+        _cart.catalog = _catalog;
+        _cart.add(widget.catalog);
+        setState(() {});
+      },
+      child:
+          isAdded ? Icon(Icons.done_outline_sharp) : "Add to cart".text.make(),
+      style: ButtonStyle(
+          shape: MaterialStateProperty.all(StadiumBorder()),
+          backgroundColor:
+              MaterialStateProperty.all(context.theme.buttonColor)),
+    );
   }
 }
