@@ -17,7 +17,7 @@ class CartPage extends StatelessWidget {
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(32),
-              child: Placeholder(),
+              child: _CartList(),
             ),
           ),
           Divider(),
@@ -46,15 +46,19 @@ class _CartTotal extends StatelessWidget {
           SizedBox(
             width: 100,
             child: ElevatedButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all(context.theme.buttonColor)),
-                child: Text(
-                  'Buy',
-                  textScaleFactor: 2,
-                  style: TextStyle(color: Colors.white),
-                )),
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Buy is not supported yet")));
+              },
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(context.theme.buttonColor)),
+              child: Text(
+                'Buy',
+                textScaleFactor: 2,
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
           )
         ],
       ),
@@ -72,6 +76,15 @@ class _CartList extends StatefulWidget {
 class _CartListState extends State<_CartList> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ListView.builder(
+      itemCount: 5,
+      itemBuilder: (context, index) => ListTile(
+        trailing: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.remove_circle_sharp),
+        ),
+        title: Text("Item 1"),
+      ),
+    );
   }
 }
