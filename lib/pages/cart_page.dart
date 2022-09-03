@@ -80,16 +80,27 @@ class _CartListState extends State<_CartList> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      // itemCount: 5,
-      itemCount: _cart.item.length,
-      itemBuilder: (context, index) => ListTile(
-        trailing: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.remove_circle_sharp),
-        ),
-        title: Text(_cart.item[index]!.name),
-      ),
-    );
+    return _cart.item.isEmpty
+        ? Center(
+            child: Text(
+            "Please add to cart",
+            textScaleFactor: 2,
+          ))
+        : ListView.builder(
+            // itemCount: 5,
+            itemCount: _cart.item.length,
+            itemBuilder: (context, index) => ListTile(
+              trailing: IconButton(
+                onPressed: () {
+                  setState(() {});
+                },
+                icon: Icon(
+                  Icons.remove_circle_sharp,
+                  color: Colors.red,
+                ),
+              ),
+              title: Text(_cart.item[index]!.name),
+            ),
+          );
   }
 }
