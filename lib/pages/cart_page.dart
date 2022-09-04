@@ -92,6 +92,7 @@ class _CartListState extends State<_CartList> {
             itemBuilder: (context, index) => ListTile(
               trailing: IconButton(
                 onPressed: () {
+                  _cart.remove(_cart.item[index]);
                   setState(() {});
                 },
                 icon: Icon(

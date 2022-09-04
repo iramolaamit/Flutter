@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/models/cart.dart';
+import 'package:untitled/widets/cart/add_to_cart.dart';
 import 'package:untitled/widets/homeWidgets/CatalogImage.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -65,15 +65,7 @@ class CatalogItem extends StatelessWidget {
                   buttonPadding: EdgeInsets.zero,
                   children: [
                     '\$${catalog.price}'.text.bold.xl.make(),
-                    _AddToCart(catalog: catalog),
-                    // ElevatedButton(
-                    //   onPressed: () {},
-                    //   child: "Buy".text.make(),
-                    //   style: ButtonStyle(
-                    //     shape: MaterialStateProperty.all(StadiumBorder()),
-                    //     // backgroundColor: MaterialStateProperty.all(MyTheme.darkBlueColor)
-                    //   ),
-                    // ),
+                    AddToCart(catalog: catalog),
                   ],
                 ).pOnly(right: 4),
               ],
@@ -82,40 +74,5 @@ class CatalogItem extends StatelessWidget {
         ],
       ),
     ).color(context.cardColor).rounded.square(150).make().py16();
-  }
-}
-
-class _AddToCart extends StatefulWidget {
-  final Item catalog;
-
-  const _AddToCart({Key? key, required this.catalog}) : super(key: key);
-
-  @override
-  State<_AddToCart> createState() => _AddToCartState();
-}
-
-class _AddToCartState extends State<_AddToCart> {
-  final _cart = CartModel();
-
-  @override
-  Widget build(BuildContext context) {
-    bool isInCart = _cart.item.contains(widget.catalog) ?? false;
-    return ElevatedButton(
-      onPressed: () {
-        if (!isInCart) {
-          isInCart = isInCart.toggle();
-          final _catalog = CatalogModel();
-          _cart.catalog = _catalog;
-          _cart.add(widget.catalog);
-          setState(() {});
-        }
-      },
-      child:
-          isInCart ? Icon(Icons.done_outline_sharp) : "Add to cart".text.make(),
-      style: ButtonStyle(
-          shape: MaterialStateProperty.all(StadiumBorder()),
-          backgroundColor:
-              MaterialStateProperty.all(context.theme.buttonColor)),
-    );
   }
 }
