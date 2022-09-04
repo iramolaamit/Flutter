@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/core/store.dart';
 import 'package:untitled/models/cart.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -31,17 +32,20 @@ class CartPage extends StatelessWidget {
 
 class _CartTotal extends StatelessWidget {
   _CartTotal({Key? key}) : super(key: key);
-  final _cart = CartModel();
+
+  // final _cart = CartModel();
 
   @override
   Widget build(BuildContext context) {
+    final CartModel? _cart = (VxState.store as MyStore).cart;
+
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text(
-            '\$${_cart.totalPrice}',
+            '\$${_cart!.totalPrice}',
             textScaleFactor: 2,
             style: TextStyle(color: context.accentColor),
           ),
@@ -54,7 +58,7 @@ class _CartTotal extends StatelessWidget {
               },
               style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all(context.theme.buttonColor)),
+                  MaterialStateProperty.all(context.theme.buttonColor)),
               child: Text(
                 'Buy',
                 textScaleFactor: 2,
@@ -69,11 +73,13 @@ class _CartTotal extends StatelessWidget {
 }
 
 class _CartList extends StatelessWidget {
-  final _cart = CartModel();
+  // final _cart = CartModel();
 
   @override
   Widget build(BuildContext context) {
-    return _cart.item.isEmpty
+    final CartModel? _cart = (VxState.store as MyStore).cart;
+
+    return _cart!.item.isEmpty
         ? Center(
             child: Text(
             "Please add to cart",
