@@ -38,16 +38,21 @@ class _CartTotal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final CartModel? _cart = (VxState.store as MyStore).cart;
-
+    print('Build');
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text(
-            '\$${_cart!.totalPrice}',
-            textScaleFactor: 2,
-            style: TextStyle(color: context.accentColor),
+          VxBuilder(
+            mutations: {RemoveMutation},
+            builder: (context, store, status) {
+              return Text(
+                '\$${_cart!.totalPrice}',
+                textScaleFactor: 2,
+                style: TextStyle(color: context.accentColor),
+              );
+            },
           ),
           SizedBox(
             width: 100,
@@ -77,6 +82,7 @@ class _CartList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    VxState.watch(context, on: [RemoveMutation]);
     final CartModel? _cart = (VxState.store as MyStore).cart;
 
     return _cart!.item.isEmpty
@@ -88,19 +94,19 @@ class _CartList extends StatelessWidget {
         : ListView.builder(
             // itemCount: 5,
             itemCount: _cart.item.length,
-            itemBuilder: (context, index) => ListTile(
-              trailing: IconButton(
-                onPressed: () {
-                  _cart.remove(_cart.item[index]);
-                  // setState(() {});
-                },
+      itemBuilder: (context, index) => ListTile(
+        trailing: IconButton(
+                onPressed: () => RemoveMutation(_cart.item[index])
+                // _cart.remove(_cart.item[index]);
+                // setState(() {});
+                ,
                 icon: Icon(
                   Icons.remove_circle_sharp,
                   color: Colors.red,
                 ),
               ),
-              title: Text(_cart.item[index]!.name),
-            ),
-          );
+        title: Text(_cart.item[index]!.name),
+      ),
+    );
   }
 }
